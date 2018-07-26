@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @user_point.index %>
+</p>
+
+<p>
+  <strong>Master additionalpoint:</strong>
+  <%= @user_point.master_additionalpoint_id %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @user_point.value %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @user_point.reason %>
+</p>
+
+<%= link_to 'Edit', edit_user_point_path(@user_point) %> |
+<%= link_to 'Back', user_points_path %>

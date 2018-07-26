@@ -69,6 +69,6 @@ class UserInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_info_params
-      params.require(:user_info).permit(:index, :name, :birth, :age, :insurance, :job_id, :address, :wife, :family, :position_id, :family_allowance_id, :metropolitan_allowance_id, :standard_id, :salary_id)
+      params.require(:user_info).permit(:position-id, :job-id, :index, :name, :birth, :age, :ageP, :age-adjustment, :insurance, :address, :partner-num, :family-num, :shorter-working-hour-ch, :Secondhalf-salary)
     end
 end

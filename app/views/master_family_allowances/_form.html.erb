@@ -1,0 +1,32 @@
+<%= form_with(model: master_family_allowance, local: true) do |form| %>
+  <% if master_family_allowance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(master_family_allowance.errors.count, "error") %> prohibited this master_family_allowance from being saved:</h2>
+
+      <ul>
+      <% master_family_allowance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :index %>
+    <%= form.number_field :index, id: :master_family_allowance_index %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :master_family_allowance_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allowance %>
+    <%= form.number_field :allowance, id: :master_family_allowance_allowance %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

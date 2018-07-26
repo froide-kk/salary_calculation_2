@@ -10,47 +10,107 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180725115349) do
+ActiveRecord::Schema.define(version: 20180726083812) do
 
-  create_table "jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "master_additionalpoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
-    t.integer "allowances"
     t.string "name"
+    t.integer "allowance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "jobtests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "master_family_allowances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
-    t.string "job"
-    t.integer "age"
+    t.string "name"
+    t.integer "allowance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "metropolitans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "master_jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
-    t.string "address"
-    t.integer "address_allowance"
+    t.string "name"
+    t.integer "allowance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "master_metropolitions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "index"
+    t.string "name"
+    t.integer "allowance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "master_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.integer "index"
+    t.integer "function_allowance"
+    t.integer "duty_allowance"
+    t.integer "deemded_overtime"
+    t.integer "standard_age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "master_standards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "index"
+    t.string "name"
+    t.integer "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "save_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_info_id"
+    t.integer "index"
+    t.integer "year"
+    t.integer "month"
+    t.integer "basic_age"
+    t.integer "functional_level"
+    t.integer "normal_working_hour_allowance"
+    t.integer "metropolitan_allowance"
+    t.integer "basic_pay"
+    t.integer "hourly_wage"
+    t.integer "extra_work_hourly_wage"
+    t.integer "extra_work_time"
+    t.integer "overtime_pay"
+    t.integer "family_allowance"
+    t.integer "face_wage"
+    t.integer "difference"
+    t.integer "promotion_rate"
+    t.integer "hourly_difference"
+    t.integer "ratio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "position_id"
+    t.integer "job_id"
     t.integer "index"
     t.string "name"
-    t.string "birth"
+    t.integer "birth"
     t.integer "age"
+    t.integer "ageP"
+    t.integer "age_adjustment"
     t.integer "insurance"
-    t.integer "job_id"
     t.string "address"
-    t.integer "wife"
-    t.integer "family"
-    t.integer "position_id"
-    t.integer "family_allowance_id"
-    t.string "metropolitan_allowance_id"
-    t.integer "standard_id"
-    t.integer "salary_id"
+    t.integer "partner_num"
+    t.integer "family_num"
+    t.integer "shorter_working_hour_ch"
+    t.integer "Secondhalf_salary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_points", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "index"
+    t.integer "master_additionalpoint_id"
+    t.integer "value"
+    t.string "reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

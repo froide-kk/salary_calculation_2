@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  index: 1
+  function-allowance: 1
+  duty-allowance: 1
+  deemded-overtime: 1
+  standard-age: 1
+
+two:
+  name: MyString
+  index: 1
+  function-allowance: 1
+  duty-allowance: 1
+  deemded-overtime: 1
+  standard-age: 1

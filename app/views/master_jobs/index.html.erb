@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Master Jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Allowance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @master_jobs.each do |master_job| %>
+      <tr>
+        <td><%= master_job.index %></td>
+        <td><%= master_job.name %></td>
+        <td><%= master_job.allowance %></td>
+        <td><%= link_to 'Show', master_job %></td>
+        <td><%= link_to 'Edit', edit_master_job_path(master_job) %></td>
+        <td><%= link_to 'Destroy', master_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master Job', new_master_job_path %>

@@ -1,0 +1,2 @@
+class MasterFamilyAllowance < ApplicationRecord
+end

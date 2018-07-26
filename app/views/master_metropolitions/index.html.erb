@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Master Metropolitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Allowance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @master_metropolitions.each do |master_metropolition| %>
+      <tr>
+        <td><%= master_metropolition.index %></td>
+        <td><%= master_metropolition.name %></td>
+        <td><%= master_metropolition.allowance %></td>
+        <td><%= link_to 'Show', master_metropolition %></td>
+        <td><%= link_to 'Edit', edit_master_metropolition_path(master_metropolition) %></td>
+        <td><%= link_to 'Destroy', master_metropolition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master Metropolition', new_master_metropolition_path %>

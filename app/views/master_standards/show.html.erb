@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @master_standard.index %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @master_standard.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @master_standard.value %>
+</p>
+
+<%= link_to 'Edit', edit_master_standard_path(@master_standard) %> |
+<%= link_to 'Back', master_standards_path %>

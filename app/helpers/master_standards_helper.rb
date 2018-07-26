@@ -1,0 +1,2 @@
+module MasterStandardsHelper
+end

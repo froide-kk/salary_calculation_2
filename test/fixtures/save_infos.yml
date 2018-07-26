@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_info_id: 1
+  index: 1
+  year: 1
+  month: 1
+  basic_age: 1
+  functional_level: 1
+  normal_working_hour_allowance: 1
+  metropolitan_allowance: 1
+  basic_pay: 1
+  hourly_wage: 1
+  extra_work_hourly_wage: 1
+  extra_work_time: 1
+  overtime_pay: 1
+  family_allowance: 1
+  face_wage: 1
+  difference: 1
+  promotion_rate: 1
+  hourly_difference: 1
+  ratio: 1
+
+two:
+  user_info_id: 1
+  index: 1
+  year: 1
+  month: 1
+  basic_age: 1
+  functional_level: 1
+  normal_working_hour_allowance: 1
+  metropolitan_allowance: 1
+  basic_pay: 1
+  hourly_wage: 1
+  extra_work_hourly_wage: 1
+  extra_work_time: 1
+  overtime_pay: 1
+  family_allowance: 1
+  face_wage: 1
+  difference: 1
+  promotion_rate: 1
+  hourly_difference: 1
+  ratio: 1

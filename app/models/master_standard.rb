@@ -1,0 +1,2 @@
+class MasterStandard < ApplicationRecord
+end

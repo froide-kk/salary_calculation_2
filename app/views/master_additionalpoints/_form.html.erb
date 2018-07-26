@@ -1,0 +1,32 @@
+<%= form_with(model: master_additionalpoint, local: true) do |form| %>
+  <% if master_additionalpoint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(master_additionalpoint.errors.count, "error") %> prohibited this master_additionalpoint from being saved:</h2>
+
+      <ul>
+      <% master_additionalpoint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :index %>
+    <%= form.number_field :index, id: :master_additionalpoint_index %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :master_additionalpoint_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allowance %>
+    <%= form.number_field :allowance, id: :master_additionalpoint_allowance %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Master Additionalpoints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Allowance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @master_additionalpoints.each do |master_additionalpoint| %>
+      <tr>
+        <td><%= master_additionalpoint.index %></td>
+        <td><%= master_additionalpoint.name %></td>
+        <td><%= master_additionalpoint.allowance %></td>
+        <td><%= link_to 'Show', master_additionalpoint %></td>
+        <td><%= link_to 'Edit', edit_master_additionalpoint_path(master_additionalpoint) %></td>
+        <td><%= link_to 'Destroy', master_additionalpoint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master Additionalpoint', new_master_additionalpoint_path %>

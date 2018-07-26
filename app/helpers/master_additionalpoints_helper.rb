@@ -1,0 +1,2 @@
+module MasterAdditionalpointsHelper
+end

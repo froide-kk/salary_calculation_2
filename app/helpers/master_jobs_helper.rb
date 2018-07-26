@@ -1,0 +1,2 @@
+module MasterJobsHelper
+end

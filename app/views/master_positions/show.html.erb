@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @master_position.name %>
+</p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @master_position.index %>
+</p>
+
+<p>
+  <strong>Function-allowance:</strong>
+  <%= @master_position.function-allowance %>
+</p>
+
+<p>
+  <strong>Duty-allowance:</strong>
+  <%= @master_position.duty-allowance %>
+</p>
+
+<p>
+  <strong>Deemded-overtime:</strong>
+  <%= @master_position.deemded-overtime %>
+</p>
+
+<p>
+  <strong>Standard-age:</strong>
+  <%= @master_position.standard-age %>
+</p>
+
+<%= link_to 'Edit', edit_master_position_path(@master_position) %> |
+<%= link_to 'Back', master_positions_path %>

@@ -1,2 +1,2 @@
-json.extract! user_info, :id, :index, :name, :birth, :age, :insurance, :job_id, :address, :wife, :family, :position_id, :family_allowance_id, :metropolitan_allowance_id, :standard_id, :salary_id, :created_at, :updated_at
+json.extract! user_info, :id, :position-id, :job-id, :index, :name, :birth, :age, :ageP, :age-adjustment, :insurance, :address, :partner-num, :family-num, :shorter-working-hour-ch, :Secondhalf-salary, :created_at, :updated_at
 json.url user_info_url(user_info, format: :json)

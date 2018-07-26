@@ -1,0 +1,2 @@
+class MasterPosition < ApplicationRecord
+end

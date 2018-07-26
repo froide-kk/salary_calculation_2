@@ -1,0 +1,2 @@
+class MasterAdditionalpoint < ApplicationRecord
+end

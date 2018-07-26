@@ -1,0 +1,2 @@
+class MasterJob < ApplicationRecord
+end

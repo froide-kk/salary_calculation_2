@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Master Positions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Index</th>
+      <th>Function-allowance</th>
+      <th>Duty-allowance</th>
+      <th>Deemded-overtime</th>
+      <th>Standard-age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @master_positions.each do |master_position| %>
+      <tr>
+        <td><%= master_position.name %></td>
+        <td><%= master_position.index %></td>
+        <td><%= master_position.function-allowance %></td>
+        <td><%= master_position.duty-allowance %></td>
+        <td><%= master_position.deemded-overtime %></td>
+        <td><%= master_position.standard-age %></td>
+        <td><%= link_to 'Show', master_position %></td>
+        <td><%= link_to 'Edit', edit_master_position_path(master_position) %></td>
+        <td><%= link_to 'Destroy', master_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master Position', new_master_position_path %>

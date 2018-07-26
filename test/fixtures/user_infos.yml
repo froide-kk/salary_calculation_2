@@ -1,33 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  position-id: 1
+  job-id: 1
   index: 1
   name: MyString
-  birth: MyString
+  birth: 1
   age: 1
+  ageP: 1
+  age-adjustment: 1
   insurance: 1
-  job_id: 1
   address: MyString
-  wife: 1
-  family: 1
-  position_id: 1
-  family_allowance_id: 1
-  metropolitan_allowance_id: MyString
-  standard_id: 1
-  salary_id: 1
+  partner-num: 1
+  family-num: 1
+  shorter-working-hour-ch: 1
+  Secondhalf-salary: 1
 
 two:
+  position-id: 1
+  job-id: 1
   index: 1
   name: MyString
-  birth: MyString
+  birth: 1
   age: 1
+  ageP: 1
+  age-adjustment: 1
   insurance: 1
-  job_id: 1
   address: MyString
-  wife: 1
-  family: 1
-  position_id: 1
-  family_allowance_id: 1
-  metropolitan_allowance_id: MyString
-  standard_id: 1
-  salary_id: 1
+  partner-num: 1
+  family-num: 1
+  shorter-working-hour-ch: 1
+  Secondhalf-salary: 1

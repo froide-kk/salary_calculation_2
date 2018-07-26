@@ -1,0 +1,112 @@
+<%= form_with(model: save_info, local: true) do |form| %>
+  <% if save_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(save_info.errors.count, "error") %> prohibited this save_info from being saved:</h2>
+
+      <ul>
+      <% save_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_info_id %>
+    <%= form.number_field :user_info_id, id: :save_info_user_info_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :index %>
+    <%= form.number_field :index, id: :save_info_index %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :save_info_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.number_field :month, id: :save_info_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :basic_age %>
+    <%= form.number_field :basic_age, id: :save_info_basic_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :functional_level %>
+    <%= form.number_field :functional_level, id: :save_info_functional_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :normal_working_hour_allowance %>
+    <%= form.number_field :normal_working_hour_allowance, id: :save_info_normal_working_hour_allowance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :metropolitan_allowance %>
+    <%= form.number_field :metropolitan_allowance, id: :save_info_metropolitan_allowance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :basic_pay %>
+    <%= form.number_field :basic_pay, id: :save_info_basic_pay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hourly_wage %>
+    <%= form.number_field :hourly_wage, id: :save_info_hourly_wage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :extra_work_hourly_wage %>
+    <%= form.number_field :extra_work_hourly_wage, id: :save_info_extra_work_hourly_wage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :extra_work_time %>
+    <%= form.number_field :extra_work_time, id: :save_info_extra_work_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overtime_pay %>
+    <%= form.number_field :overtime_pay, id: :save_info_overtime_pay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_allowance %>
+    <%= form.number_field :family_allowance, id: :save_info_family_allowance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :face_wage %>
+    <%= form.number_field :face_wage, id: :save_info_face_wage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :difference %>
+    <%= form.number_field :difference, id: :save_info_difference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :promotion_rate %>
+    <%= form.number_field :promotion_rate, id: :save_info_promotion_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hourly_difference %>
+    <%= form.number_field :hourly_difference, id: :save_info_hourly_difference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ratio %>
+    <%= form.number_field :ratio, id: :save_info_ratio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class MasterMetropolition < ApplicationRecord
+end

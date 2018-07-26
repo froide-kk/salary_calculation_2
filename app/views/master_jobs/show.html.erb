@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @master_job.index %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @master_job.name %>
+</p>
+
+<p>
+  <strong>Allowance:</strong>
+  <%= @master_job.allowance %>
+</p>
+
+<%= link_to 'Edit', edit_master_job_path(@master_job) %> |
+<%= link_to 'Back', master_jobs_path %>
