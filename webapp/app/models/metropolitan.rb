@@ -1,0 +1,2 @@
+class Metropolitan < ApplicationRecord
+end

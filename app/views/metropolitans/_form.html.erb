@@ -1,0 +1,32 @@
+<%= form_with(model: metropolitan, local: true) do |form| %>
+  <% if metropolitan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(metropolitan.errors.count, "error") %> prohibited this metropolitan from being saved:</h2>
+
+      <ul>
+      <% metropolitan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :index %>
+    <%= form.number_field :index, id: :metropolitan_index %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :metropolitan_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_allowance %>
+    <%= form.number_field :address_allowance, id: :metropolitan_address_allowance %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

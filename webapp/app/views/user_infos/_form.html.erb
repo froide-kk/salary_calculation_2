@@ -1,0 +1,87 @@
+<%= form_with(model: user_info, local: true) do |form| %>
+  <% if user_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_info.errors.count, "error") %> prohibited this user_info from being saved:</h2>
+
+      <ul>
+      <% user_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :index %>
+    <%= form.number_field :index, id: :user_info_index %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :user_info_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth %>
+    <%= form.text_field :birth, id: :user_info_birth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age, id: :user_info_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurance %>
+    <%= form.number_field :insurance, id: :user_info_insurance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_id %>
+    <%= form.number_field :job_id, id: :user_info_job_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :user_info_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wife %>
+    <%= form.number_field :wife, id: :user_info_wife %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family %>
+    <%= form.number_field :family, id: :user_info_family %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position_id %>
+    <%= form.number_field :position_id, id: :user_info_position_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_allowance_id %>
+    <%= form.number_field :family_allowance_id, id: :user_info_family_allowance_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :metropolitan_allowance_id %>
+    <%= form.text_field :metropolitan_allowance_id, id: :user_info_metropolitan_allowance_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :standard_id %>
+    <%= form.number_field :standard_id, id: :user_info_standard_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salary_id %>
+    <%= form.number_field :salary_id, id: :user_info_salary_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

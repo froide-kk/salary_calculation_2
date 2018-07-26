@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @metropolitan.index %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @metropolitan.address %>
+</p>
+
+<p>
+  <strong>Address allowance:</strong>
+  <%= @metropolitan.address_allowance %>
+</p>
+
+<%= link_to 'Edit', edit_metropolitan_path(@metropolitan) %> |
+<%= link_to 'Back', metropolitans_path %>
