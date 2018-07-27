@@ -5,6 +5,7 @@ class UserInfosController < ApplicationController
   # GET /user_infos.json
   def index
     @user_infos = UserInfo.all
+    @user_points = UserPoint.all
   end
 
   # GET /user_infos/1
@@ -69,6 +70,6 @@ class UserInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_info_params
-      params.require(:user_info).permit(:index, :name, :birth, :age, :insurance, :job_id, :address, :wife, :family, :position_id, :family_allowance_id, :metropolitan_allowance_id, :standard_id, :salary_id)
+      params.require(:user_info).permit(:master_position_id, :master_job_id, :index, :name, :birth, :age, :ageP, :age_adjustment, :insurance, :address, :partner_num, :family_num, :shorter_working_hour_ch, :Secondhalf_salary)
     end
 end

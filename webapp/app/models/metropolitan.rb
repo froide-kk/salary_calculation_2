@@ -1,2 +1,0 @@
-class Metropolitan < ApplicationRecord
-end

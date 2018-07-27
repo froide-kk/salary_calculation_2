@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+<h2><%= link_to 'HOME', user_infos_path %></h2>
+<p>
+  <strong>Master position:</strong>
+  <%= @user_info.master_position_id %>
+</p>
+
+<p>
+  <strong>Master job:</strong>
+  <%= @user_info.master_job_id %>
+</p>
 
 <p>
   <strong>Index:</strong>
@@ -21,13 +31,18 @@
 </p>
 
 <p>
-  <strong>Insurance:</strong>
-  <%= @user_info.insurance %>
+  <strong>Agep:</strong>
+  <%= @user_info.ageP %>
 </p>
 
 <p>
-  <strong>Job:</strong>
-  <%= @user_info.job_id %>
+  <strong>Age adjustment:</strong>
+  <%= @user_info.age_adjustment %>
+</p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @user_info.insurance %>
 </p>
 
 <p>
@@ -36,38 +51,23 @@
 </p>
 
 <p>
-  <strong>Wife:</strong>
-  <%= @user_info.wife %>
+  <strong>Partner num:</strong>
+  <%= @user_info.partner_num %>
 </p>
 
 <p>
-  <strong>Family:</strong>
-  <%= @user_info.family %>
+  <strong>Family num:</strong>
+  <%= @user_info.family_num %>
 </p>
 
 <p>
-  <strong>Position:</strong>
-  <%= @user_info.position_id %>
+  <strong>Shorter working hour ch:</strong>
+  <%= @user_info.shorter_working_hour_ch %>
 </p>
 
 <p>
-  <strong>Family allowance:</strong>
-  <%= @user_info.family_allowance_id %>
-</p>
-
-<p>
-  <strong>Metropolitan allowance:</strong>
-  <%= @user_info.metropolitan_allowance_id %>
-</p>
-
-<p>
-  <strong>Standard:</strong>
-  <%= @user_info.standard_id %>
-</p>
-
-<p>
-  <strong>Salary:</strong>
-  <%= @user_info.salary_id %>
+  <strong>Secondhalf salary:</strong>
+  <%= @user_info.Secondhalf_salary %>
 </p>
 
 <%= link_to 'Edit', edit_user_info_path(@user_info) %> |

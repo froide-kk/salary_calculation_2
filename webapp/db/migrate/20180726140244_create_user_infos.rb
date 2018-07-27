@@ -1,8 +1,8 @@
 class CreateUserInfos < ActiveRecord::Migration[5.1]
   def change
     create_table :user_infos do |t|
-      t.integer :position_id
-      t.integer :job_id
+      t.integer :master_position_id
+      t.integer :master_job_id
       t.integer :index
       t.string :name
       t.integer :birth

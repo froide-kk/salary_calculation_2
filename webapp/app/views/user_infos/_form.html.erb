@@ -12,6 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :master_position_id %>
+    <%= form.number_field :master_position_id, id: :user_info_master_position_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :master_job_id %>
+    <%= form.number_field :master_job_id, id: :user_info_master_job_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :index %>
     <%= form.number_field :index, id: :user_info_index %>
   </div>
@@ -23,7 +33,7 @@
 
   <div class="field">
     <%= form.label :birth %>
-    <%= form.text_field :birth, id: :user_info_birth %>
+    <%= form.number_field :birth, id: :user_info_birth %>
   </div>
 
   <div class="field">
@@ -32,13 +42,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :insurance %>
-    <%= form.number_field :insurance, id: :user_info_insurance %>
+    <%= form.label :ageP %>
+    <%= form.number_field :ageP, id: :user_info_ageP %>
   </div>
 
   <div class="field">
-    <%= form.label :job_id %>
-    <%= form.number_field :job_id, id: :user_info_job_id %>
+    <%= form.label :age_adjustment %>
+    <%= form.number_field :age_adjustment, id: :user_info_age_adjustment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurance %>
+    <%= form.number_field :insurance, id: :user_info_insurance %>
   </div>
 
   <div class="field">
@@ -47,38 +62,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :wife %>
-    <%= form.number_field :wife, id: :user_info_wife %>
+    <%= form.label :partner_num %>
+    <%= form.number_field :partner_num, id: :user_info_partner_num %>
   </div>
 
   <div class="field">
-    <%= form.label :family %>
-    <%= form.number_field :family, id: :user_info_family %>
+    <%= form.label :family_num %>
+    <%= form.number_field :family_num, id: :user_info_family_num %>
   </div>
 
   <div class="field">
-    <%= form.label :position_id %>
-    <%= form.number_field :position_id, id: :user_info_position_id %>
+    <%= form.label :shorter_working_hour_ch %>
+    <%= form.number_field :shorter_working_hour_ch, id: :user_info_shorter_working_hour_ch %>
   </div>
 
   <div class="field">
-    <%= form.label :family_allowance_id %>
-    <%= form.number_field :family_allowance_id, id: :user_info_family_allowance_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :metropolitan_allowance_id %>
-    <%= form.text_field :metropolitan_allowance_id, id: :user_info_metropolitan_allowance_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :standard_id %>
-    <%= form.number_field :standard_id, id: :user_info_standard_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :salary_id %>
-    <%= form.number_field :salary_id, id: :user_info_salary_id %>
+    <%= form.label :Secondhalf_salary %>
+    <%= form.number_field :Secondhalf_salary, id: :user_info_Secondhalf_salary %>
   </div>
 
   <div class="actions">
