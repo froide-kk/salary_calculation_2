@@ -80,6 +80,7 @@
     <thead>
       <tr>
         <th>Index</th>
+        <th>Position</th>
         <th>Name</th>
         <th>Birth</th>
         <th>Age</th>
@@ -96,9 +97,20 @@
     </thead>
     <tbody>
     <% @index = 0  %>
+    <% @name_index = 0 %>
+    <% @master_position_name = Array.new %>
+
+    <% @master_positions.each do |master| %>
+      <% @master_position_name.push(master.name) %>
+    <% end %>
+
     <% @user_infos.each do |user_info| %>
       <tr>
         <td><%= @index += 1 %></td>
+        <% @name_index = user_info.master_position_id %>
+        <% @n_index = @name_index.to_i %>
+        <%= @n_index -= 1%>
+        <td><%= @master_position_name.at(@n_index)  %></td>
         <td><%= user_info.name %></td>
         <td><%= user_info.birth %></td>
         <td><%= user_info.age %></td>
