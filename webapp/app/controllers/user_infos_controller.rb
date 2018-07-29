@@ -6,6 +6,7 @@ class UserInfosController < ApplicationController
   def index
     @user_infos = UserInfo.all
     @user_points = UserPoint.all
+    @master_positions = MasterPosition.all
   end
 
   # GET /user_infos/1

@@ -17,8 +17,12 @@
         <%= form.label :master_position_id %>
       </div>
       <div class ="content-s">
+<<<<<<< HEAD
         <% UserInfo.joins(:master_positions)%>
         <%= select_tag(:master_position_id,options_for_select([[1,1],[2,2]]))%>
+=======
+        <%= select_tag(:master_position_id,options_for_select([['Test_1',1],['Test_2',2]]))%>
+>>>>>>> 392dabb662ee489a8b8385e71068dee14dc82bcd
       </div>
   </div>
   <br/>
