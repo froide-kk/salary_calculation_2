@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726140244) do
+ActiveRecord::Schema.define(version: 20180728172036) do
 
   create_table "master_additionalpoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 20180726140244) do
     t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_info_id"
+    t.bigint "master_positions_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["master_positions_id"], name: "index_projects_on_master_positions_id"
+    t.index ["user_info_id"], name: "index_projects_on_user_info_id"
   end
 
   create_table "save_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -115,4 +124,6 @@ ActiveRecord::Schema.define(version: 20180726140244) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "projects", "master_positions", column: "master_positions_id"
+  add_foreign_key "projects", "user_infos"
 end
