@@ -3988,7 +3988,7 @@ h1, .h1 {
     display: none; }
 
 h2:after, .h2:after {
-  content: "...";
+  content: " ";
   color: #1763E9;
   display: block; }
 
@@ -4017,7 +4017,12 @@ img.zoom-img {
   cursor: pointer;
   cursor: -webkit-zoom-out;
   cursor: -moz-zoom-out; }
-
+.button-css-cy{
+  position: relative;
+  min-height: 1px;
+  padding-left: 40px;
+  padding-right: 15px;
+}
 .zoom-overlay {
   z-index: 420;
   background: #fff;
