@@ -3,15 +3,15 @@
 one:
   name: MyString
   index: 1
-  function-allowance: 1
-  duty-allowance: 1
-  deemded-overtime: 1
-  standard-age: 1
+  functional_allowance: 1
+  duty_allowance: 1
+  deemded_overtime: 1
+  standard_age: 1
 
 two:
   name: MyString
   index: 1
-  function-allowance: 1
-  duty-allowance: 1
-  deemded-overtime: 1
-  standard-age: 1
+  functional_allowance: 1
+  duty_allowance: 1
+  deemded_overtime: 1
+  standard_age: 1

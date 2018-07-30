@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180728172036) do
+ActiveRecord::Schema.define(version: 20180730040024) do
 
   create_table "master_additionalpoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20180728172036) do
   create_table "master_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "index"
-    t.integer "function_allowance"
+    t.integer "functional_allowance"
     t.integer "duty_allowance"
     t.integer "deemded_overtime"
     t.integer "standard_age"
@@ -63,17 +63,8 @@ ActiveRecord::Schema.define(version: 20180728172036) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_info_id"
-    t.bigint "master_positions_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["master_positions_id"], name: "index_projects_on_master_positions_id"
-    t.index ["user_info_id"], name: "index_projects_on_user_info_id"
-  end
-
   create_table "save_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_info_id"
+    t.bigint "user_info_id", null: false
     t.integer "index"
     t.integer "year"
     t.integer "month"
@@ -94,11 +85,26 @@ ActiveRecord::Schema.define(version: 20180728172036) do
     t.integer "ratio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_info_id"], name: "userinfo_id_fk"
+  end
+
+  create_table "test2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "test4s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.bigint "test2_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test2_id"], name: "id_test2_fk"
   end
 
   create_table "user_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "master_position_id"
-    t.integer "master_job_id"
+    t.bigint "master_position_id", null: false
+    t.bigint "master_job_id", null: false
     t.integer "index"
     t.string "name"
     t.integer "birth"
@@ -113,6 +119,8 @@ ActiveRecord::Schema.define(version: 20180728172036) do
     t.integer "Secondhalf_salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["master_job_id"], name: "masterJ_id_fk"
+    t.index ["master_position_id"], name: "masterP_id_fk"
   end
 
   create_table "user_points", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -124,6 +132,8 @@ ActiveRecord::Schema.define(version: 20180728172036) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "projects", "master_positions", column: "master_positions_id"
-  add_foreign_key "projects", "user_infos"
+  add_foreign_key "save_infos", "user_infos", name: "userinfo_id_fk"
+  add_foreign_key "test4s", "test2s", name: "id_test2_fk"
+  add_foreign_key "user_infos", "master_jobs", name: "masterJ_id_fk"
+  add_foreign_key "user_infos", "master_positions", name: "masterP_id_fk"
 end

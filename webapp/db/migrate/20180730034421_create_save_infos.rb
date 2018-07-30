@@ -1,7 +1,7 @@
 class CreateSaveInfos < ActiveRecord::Migration[5.1]
   def change
     create_table :save_infos do |t|
-      t.integer :user_info_id
+      t.integer :user_info_id , foreign_key: true
       t.integer :index
       t.integer :year
       t.integer :month

@@ -69,10 +69,6 @@ class MasterPositionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def master_position_params
-<<<<<<< HEAD
-      params.require(:master_position).permit(user_info_id: :name, :index, :function-allowance, :duty-allowance, :deemded-overtime, :standard-age)
-=======
-      params.require(:master_position).permit(:name, :index, :function_allowance, :duty_allowance, :deemded_overtime, :standard_age)
->>>>>>> 392dabb662ee489a8b8385e71068dee14dc82bcd
+      params.require(:master_position).permit(:name, :index, :functional_allowance, :duty_allowance, :deemded_overtime, :standard_age)
     end
 end

@@ -1,8 +1,8 @@
 class CreateUserInfos < ActiveRecord::Migration[5.1]
   def change
     create_table :user_infos do |t|
-      t.integer :master_position_id, foreign_key: ture
-      t.integer :master_job_id, foreign_key: ture
+      t.integer :master_position_id , foreign_key: true
+      t.integer :master_job_id , foreign_key: true
       t.integer :index
       t.string :name
       t.integer :birth
@@ -16,7 +16,7 @@ class CreateUserInfos < ActiveRecord::Migration[5.1]
       t.integer :shorter_working_hour_ch
       t.integer :Secondhalf_salary
 
-      t.timestamps null :false
+      t.timestamps
     end
   end
 end

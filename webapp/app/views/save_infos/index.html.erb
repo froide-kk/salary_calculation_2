@@ -1,145 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by TEMPLATED
-http://templated.co
-Released for free under the Creative Commons Attribution License
+<p id="notice"><%= notice %></p>
 
-Name       : Undeviating
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20140322
+<h1>Save Infos</h1>
 
--->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<table>
+  <thead>
+    <tr>
+      <th>User info</th>
+      <th>Index</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Basic age</th>
+      <th>Functional level</th>
+      <th>Normal working hour allowance</th>
+      <th>Metropolitan allowance</th>
+      <th>Basic pay</th>
+      <th>Hourly wage</th>
+      <th>Extra work hourly wage</th>
+      <th>Extra work time</th>
+      <th>Overtime pay</th>
+      <th>Family allowance</th>
+      <th>Face wage</th>
+      <th>Difference</th>
+      <th>Promotion rate</th>
+      <th>Hourly difference</th>
+      <th>Ratio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
-</head>
-<body>
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><a href="#">Undeviating</a></h1>
-		</div>
-		<div id="menu">
-			<ul>
-				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-
-
-
-<div class ="down-menu">
-  <div class ="dropdown">
-    <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
-    <div class ="dropdown-content">
-      <%= link_to 'Position', master_positions_path %>
-			<%= link_to 'Jobs', master_jobs_path %>
-			<%= link_to 'additionalpoints', master_additionalpoints_path %>
-			<%= link_to 'family', master_family_allowances_path %>
-			<%= link_to 'metropolition', master_metropolitions_path %>
-			<%= link_to 'standards', master_standards_path %>
-    </div>
-  </div>
-		<%= link_to 'User',user_infos_path, class:"button" %>
-</div>
-<br>
-<div class="wrapper">
-
-<div id="welcome" class="container">
-
-<div class="title">
-	  <h2>Employee Informations</h2>
-		<br>
-		<br>
-</div>
-    <table style="float:left">
-   <thead>
-<tr>
-<th>User info</th>
-<th>Index</th>
-<th>Year</th>
-<th>Month</th>
-<th>Basic age</th>
-<th>Functional level</th>
-<th>Normal working hour allowance</th>
-<th>Metropolitan allowance</th>
-<th>Basic pay</th>
-<th>Hourly wage</th>
-<th>Extra work hourly wage</th>
-<th>Extra work time</th>
-<th>Overtime pay</th>
-<th>Family allowance</th>
-<th>Face wage</th>
-<th>Difference</th>
-<th>Promotion rate</th>
-<th>Hourly difference</th>
-<th>Ratio</th>
-<th colspan="3"></th>
-</tr>
-</thead>
-
-<tbody>
-<% @save_infos.each do |save_info| %>
-<tr>
- <td><%= save_info.user_info_id %></td>
- <td><%= save_info.index %></td>
- <td><%= save_info.year %></td>
- <td><%= save_info.month %></td>
- <td><%= save_info.basic_age %></td>
- <td><%= save_info.functional_level %></td>
- <td><%= save_info.normal_working_hour_allowance %></td>
- <td><%= save_info.metropolitan_allowance %></td>
- <td><%= save_info.basic_pay %></td>
- <td><%= save_info.hourly_wage %></td>
- <td><%= save_info.extra_work_hourly_wage %></td>
- <td><%= save_info.extra_work_time %></td>
- <td><%= save_info.overtime_pay %></td>
- <td><%= save_info.family_allowance %></td>
- <td><%= save_info.face_wage %></td>
- <td><%= save_info.difference %></td>
- <td><%= save_info.promotion_rate %></td>
- <td><%= save_info.hourly_difference %></td>
- <td><%= save_info.ratio %></td>
- <td><%= link_to 'Show', save_info %></td>
- <td><%= link_to 'Edit', edit_save_info_path(save_info) %></td>
- <td><%= link_to 'Destroy', save_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
-<% end %>
-</tbody>
- </table>
+  <tbody>
+    <% @save_infos.each do |save_info| %>
+      <tr>
+        <td><%= save_info.user_info_id %></td>
+        <td><%= save_info.index %></td>
+        <td><%= save_info.year %></td>
+        <td><%= save_info.month %></td>
+        <td><%= save_info.basic_age %></td>
+        <td><%= save_info.functional_level %></td>
+        <td><%= save_info.normal_working_hour_allowance %></td>
+        <td><%= save_info.metropolitan_allowance %></td>
+        <td><%= save_info.basic_pay %></td>
+        <td><%= save_info.hourly_wage %></td>
+        <td><%= save_info.extra_work_hourly_wage %></td>
+        <td><%= save_info.extra_work_time %></td>
+        <td><%= save_info.overtime_pay %></td>
+        <td><%= save_info.family_allowance %></td>
+        <td><%= save_info.face_wage %></td>
+        <td><%= save_info.difference %></td>
+        <td><%= save_info.promotion_rate %></td>
+        <td><%= save_info.hourly_difference %></td>
+        <td><%= save_info.ratio %></td>
+        <td><%= link_to 'Show', save_info %></td>
+        <td><%= link_to 'Edit', edit_save_info_path(save_info) %></td>
+        <td><%= link_to 'Destroy', save_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
-  <%= link_to 'New Save info',new_save_info_path, class:"button" %>
 
-<!-- Add your site or app content here -->
-
-</div>
-</div>
-</body>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    navbarFixedTopAnimation();
-  });
-</script>
-
-
-
-
-
-</body>
-</html>
+<%= link_to 'New Save Info', new_save_info_path %>

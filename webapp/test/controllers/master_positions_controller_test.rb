@@ -17,7 +17,7 @@ class MasterPositionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create master_position" do
     assert_difference('MasterPosition.count') do
-      post master_positions_url, params: { master_position: { deemded-overtime: @master_position.deemded-overtime, duty-allowance: @master_position.duty-allowance, function-allowance: @master_position.function-allowance, index: @master_position.index, name: @master_position.name, standard-age: @master_position.standard-age } }
+      post master_positions_url, params: { master_position: { deemded_overtime: @master_position.deemded_overtime, duty_allowance: @master_position.duty_allowance, functional_allowance: @master_position.functional_allowance, index: @master_position.index, name: @master_position.name, standard_age: @master_position.standard_age } }
     end
 
     assert_redirected_to master_position_url(MasterPosition.last)
@@ -34,7 +34,7 @@ class MasterPositionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update master_position" do
-    patch master_position_url(@master_position), params: { master_position: { deemded-overtime: @master_position.deemded-overtime, duty-allowance: @master_position.duty-allowance, function-allowance: @master_position.function-allowance, index: @master_position.index, name: @master_position.name, standard-age: @master_position.standard-age } }
+    patch master_position_url(@master_position), params: { master_position: { deemded_overtime: @master_position.deemded_overtime, duty_allowance: @master_position.duty_allowance, functional_allowance: @master_position.functional_allowance, index: @master_position.index, name: @master_position.name, standard_age: @master_position.standard_age } }
     assert_redirected_to master_position_url(@master_position)
   end
 

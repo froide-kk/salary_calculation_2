@@ -3,14 +3,14 @@
 <h1>Master Positions</h1>
 
 <table>
-  <theads>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Index</th>
-      <th>Function_allowance</th>
-      <th>Duty_allowance</th>
-      <th>Deemded_overtime</th>
-      <th>Standard_age</th>
+      <th>Functional allowance</th>
+      <th>Duty allowance</th>
+      <th>Deemded overtime</th>
+      <th>Standard age</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,10 +20,11 @@
       <tr>
         <td><%= master_position.name %></td>
         <td><%= master_position.index %></td>
-        <td><%= master_position.function_allowance %></td>
+        <td><%= master_position.functional_allowance %></td>
         <td><%= master_position.duty_allowance %></td>
         <td><%= master_position.deemded_overtime %></td>
         <td><%= master_position.standard_age %></td>
+        <td><%= link_to 'Show', master_position %></td>
         <td><%= link_to 'Edit', edit_master_position_path(master_position) %></td>
         <td><%= link_to 'Destroy', master_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

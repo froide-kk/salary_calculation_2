@@ -1,4 +1,3 @@
-
 <%= form_with(model: user_info, local: true) do |form| %>
   <% if user_info.errors.any? %>
     <div id="error_explanation">
@@ -13,133 +12,73 @@
   <% end %>
 
   <div class="field">
-      <div class ="title-s">
-        <%= form.label :master_position_id %>
-      </div>
-      <div class ="content-s">
-        <% UserInfo.joins(:master_positions)%>
-        <%= select_tag(:master_position_id,options_for_select([[1,1],[2,2]]))%>
-        <%= select_tag(:master_position_id,options_for_select([['Test_1',1],['Test_2',2]]))%>
-      </div>
-  </div>
-  <br/>
-<!--form.collection_select( :master_position_id, id: :user_info_master_position_id)-->
-  <div class="field">
-    <div class ="title-s">
-      <%= form.label :master_job_id %>
-    </div>
-    <div class = "content-s">
-      <%= select_tag(:master_job_id,options_for_select([['Test_1',1],['Test_2',2]]))%>
-    </div>
-    <!--<%= form.number_field :master_job_id, id: :user_info_master_job_id %> -->
+    <%= form.label :master_position_id %>
+    <%= form.number_field :master_position_id, id: :user_info_master_position_id %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :index %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :index, id: :user_info_index %>
-    </div>
+    <%= form.label :master_job_id %>
+    <%= form.number_field :master_job_id, id: :user_info_master_job_id %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :name %>
-    </div>
-    <div  class = "content-s">
-      <%= form.text_field :name, id: :user_info_name %>
-    </div>
+    <%= form.label :index %>
+    <%= form.number_field :index, id: :user_info_index %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :birth %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :birth, id: :user_info_birth %>
-    </div>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :user_info_name %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :age %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :age, id: :user_info_age %>
-    </div>
+    <%= form.label :birth %>
+    <%= form.number_field :birth, id: :user_info_birth %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :ageP %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :ageP, id: :user_info_ageP %>
-    </div>
+    <%= form.label :age %>
+    <%= form.number_field :age, id: :user_info_age %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :age_adjustment %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :age_adjustment, id: :user_info_age_adjustment %>
-    </div>
+    <%= form.label :ageP %>
+    <%= form.number_field :ageP, id: :user_info_ageP %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :insurance %>
-    </dic>
-    <div  class = "content-s">
-      <%= form.number_field :insurance, id: :user_info_insurance %>
-    </div>
+    <%= form.label :age_adjustment %>
+    <%= form.number_field :age_adjustment, id: :user_info_age_adjustment %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :address %>
-    </div>
-    <div  class = "content-s">
-      <%= form.text_field :address, id: :user_info_address %>
-    </div>
+    <%= form.label :insurance %>
+    <%= form.number_field :insurance, id: :user_info_insurance %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :partner_num %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :partner_num, id: :user_info_partner_num %>
-    </div>
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :user_info_address %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :family_num %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :family_num, id: :user_info_family_num %>
-    </div>
+    <%= form.label :partner_num %>
+    <%= form.number_field :partner_num, id: :user_info_partner_num %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :shorter_working_hour_ch %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :shorter_working_hour_ch, id: :user_info_shorter_working_hour_ch %>
-    </div>
+    <%= form.label :family_num %>
+    <%= form.number_field :family_num, id: :user_info_family_num %>
   </div>
 
   <div class="field">
-    <div class ="title-s">
-      <%= form.label :Secondhalf_salary %>
-    </div>
-    <div  class = "content-s">
-      <%= form.number_field :Secondhalf_salary, id: :user_info_Secondhalf_salary %>
-    </div>
+    <%= form.label :shorter_working_hour_ch %>
+    <%= form.number_field :shorter_working_hour_ch, id: :user_info_shorter_working_hour_ch %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Secondhalf_salary %>
+    <%= form.number_field :Secondhalf_salary, id: :user_info_Secondhalf_salary %>
   </div>
 
   <div class="actions">
