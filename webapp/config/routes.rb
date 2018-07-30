@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :master_additionalpoints
   resources :user_points
+  resources :master_additionalpoints
   resources :save_infos
   resources :master_jobs
   resources :master_positions

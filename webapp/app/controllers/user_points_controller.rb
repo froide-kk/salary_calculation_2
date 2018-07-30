@@ -69,6 +69,6 @@ class UserPointsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_point_params
-      params.require(:user_point).permit(:index, :master_additionalpoint_id, :value, :reason)
+      params.require(:user_point).permit(:index, :user_info_id, :master_additionalpoint_id, :value, :reason)
     end
 end

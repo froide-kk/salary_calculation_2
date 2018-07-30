@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Index</th>
+      <th>User info</th>
       <th>Master additionalpoint</th>
       <th>Value</th>
       <th>Reason</th>
@@ -17,6 +18,7 @@
     <% @user_points.each do |user_point| %>
       <tr>
         <td><%= user_point.index %></td>
+        <td><%= user_point.user_info_id %></td>
         <td><%= user_point.master_additionalpoint_id %></td>
         <td><%= user_point.value %></td>
         <td><%= user_point.reason %></td>

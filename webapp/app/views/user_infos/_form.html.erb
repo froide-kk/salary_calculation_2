@@ -1,3 +1,4 @@
+
 <%= form_with(model: user_info, local: true) do |form| %>
   <% if user_info.errors.any? %>
     <div id="error_explanation">
@@ -12,74 +13,85 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :master_position_id %>
-    <%= form.number_field :master_position_id, id: :user_info_master_position_id %>
-  </div>
+     <table>
+       <tr>
+         <td><%= form.label :master_position_id %></td>
+         <% position_array = MasterPosition.all.map{
+              |master_position| [master_position.name,master_position.id] } %>
 
-  <div class="field">
-    <%= form.label :master_job_id %>
-    <%= form.number_field :master_job_id, id: :user_info_master_job_id %>
-  </div>
+         <td><%= select_tag(:master_position_id,options_for_select(position_array),id: :user_info_master_position_id)%></td>
 
-  <div class="field">
-    <%= form.label :index %>
-    <%= form.number_field :index, id: :user_info_index %>
-  </div>
+        <!--<td><%= form.number_field :master_position_id, id: :user_info_master_position_id %></td>-->
+       </tr>
+       <tr>
+         <td><%= form.label :master_job_id %></td>
+         <% job_array = MasterJob.all.map{
+              |master_job| [master_job.name,master_job.id] } %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_info_name %>
-  </div>
+          <!--<td><%= select_tag(:master_job_id,options_for_select(job_array))%></td>-->
+          <td><%= form.number_field :master_job_id, id: :user_info_master_job_id  %></td>
+      </tr>
+      <tr>
+          <td><%= form.label :index %></td>
+          <td><%= form.number_field :index, id: :user_info_index  %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :birth %>
-    <%= form.number_field :birth, id: :user_info_birth %>
-  </div>
+      <tr>
+        <td><%= form.label :name %></td>
+        <td><%= form.text_field :name, id: :user_info_name %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age, id: :user_info_age %>
-  </div>
+      <tr>
+        <td><%= form.label :birth %></td>
+        <td><%= form.number_field :birth, id: :user_info_birth %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :ageP %>
-    <%= form.number_field :ageP, id: :user_info_ageP %>
-  </div>
+      <tr>
+        <td><%= form.label :age %></td>
+        <td><%= form.number_field :age, id: :user_info_age %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :age_adjustment %>
-    <%= form.number_field :age_adjustment, id: :user_info_age_adjustment %>
-  </div>
+      <tr>
+        <td><%= form.label :ageP %></td>
+        <td><%= form.number_field :ageP, id: :user_info_ageP %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :insurance %>
-    <%= form.number_field :insurance, id: :user_info_insurance %>
-  </div>
+      <tr>
+        <td><%= form.label :age_adjustment %></td>
+        <td><%= form.number_field :age_adjustment, id: :user_info_age_adjustment %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :user_info_address %>
-  </div>
+      <tr>
+        <td><%= form.label :insurance %></td>
+        <td><%= form.number_field :insurance, id: :user_info_insurance %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :partner_num %>
-    <%= form.number_field :partner_num, id: :user_info_partner_num %>
-  </div>
+      <tr>
+        <td><%= form.label :address %></td>
+        <td><%= form.text_field :address, id: :user_info_address %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :partner_num %></td>
+        <td><%= form.number_field :partner_num, id: :user_info_partner_num %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :family_num %></td>
+        <td><%= form.number_field :family_num, id: :user_info_family_num %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :shorter_working_hour_ch %></td>
+        <td><%= form.number_field :shorter_working_hour_ch, id: :user_info_shorter_working_hour_ch %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :Secondhalf_salary %></td>
+        <td><%= form.number_field :Secondhalf_salary, id: :user_info_Secondhalf_salary %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :family_num %>
-    <%= form.number_field :family_num, id: :user_info_family_num %>
-  </div>
 
-  <div class="field">
-    <%= form.label :shorter_working_hour_ch %>
-    <%= form.number_field :shorter_working_hour_ch, id: :user_info_shorter_working_hour_ch %>
+     </table>
   </div>
-
-  <div class="field">
-    <%= form.label :Secondhalf_salary %>
-    <%= form.number_field :Secondhalf_salary, id: :user_info_Secondhalf_salary %>
-  </div>
+  <br/>
+<!--form.collection_select( :master_position_id, id: :user_info_master_position_id)-->
 
   <div class="actions">
     <%= form.submit %>

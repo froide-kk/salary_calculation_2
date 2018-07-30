@@ -2,12 +2,14 @@
 
 one:
   index: 1
+  user_info_id: 1
   master_additionalpoint_id: 1
   value: 1
   reason: MyString
 
 two:
   index: 1
+  user_info_id: 1
   master_additionalpoint_id: 1
   value: 1
   reason: MyString

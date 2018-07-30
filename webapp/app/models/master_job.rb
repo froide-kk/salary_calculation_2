@@ -1,3 +1,3 @@
 class MasterJob < ApplicationRecord
-  has_one :master_jobs
+  has_one :user_infos
 end

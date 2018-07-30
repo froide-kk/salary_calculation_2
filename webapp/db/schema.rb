@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730040024) do
+ActiveRecord::Schema.define(version: 20180730085925) do
 
   create_table "master_additionalpoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 20180730040024) do
 
   create_table "user_points", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
+    t.integer "user_info_id"
     t.integer "master_additionalpoint_id"
     t.integer "value"
     t.string "reason"
