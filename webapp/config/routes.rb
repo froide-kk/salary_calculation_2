@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :companies
   resources :user_points
   resources :master_additionalpoints
   resources :save_infos

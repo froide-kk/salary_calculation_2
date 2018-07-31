@@ -26,12 +26,12 @@ Released   : 20140322
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><a href="#">Undeviating</a></h1>
+			<h1>Undeviating</h1>
 		</div>
 		<div id="menu">
 			<ul>
 				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
+				<li><%= link_to 'Position', user_points_path %></li>
 				<li><a href="#" accesskey="3" title="">About Us</a></li>
 				<li><a href="#" accesskey="4" title="">Careers</a></li>
 			</ul>
@@ -69,6 +69,8 @@ Released   : 20140322
    <thead>
      <tr>
        <th>Index</th>
+			 <th>Position</th>
+			 <th>Job</th>
        <th>Name</th>
        <th>Birth</th>
        <th>Age</th>
@@ -87,6 +89,7 @@ Released   : 20140322
    <% @user_infos.each do |user_info| %>
      <tr>
        <td><%= user_info.index %></td>
+			 <td><%= user_info.master_position.name%></td>
        <td><%= user_info.master_job.name%></td>
        <td><%= user_info.name %></td>
        <td><%= user_info.birth %></td>

@@ -19,7 +19,7 @@ html,body
 	{
 		margin: 0;
 		padding: 0;
-		color: white;
+		color: #404040;
 	}
 
 	p, ol, ul
@@ -264,8 +264,9 @@ html,body
 		text-decoration: none;
 		font-size: 1em;
 		color: #FFF;
+		margin-left: auto;
+		margin-right: auto;
 	}
-
 	.button:before
 	{
 		display: inline-block;
@@ -334,7 +335,6 @@ html,body
 		margin-bottom: 0.20em;
 		padding: 0.20em 0.9em;
 		font-size: 3.5em;
-		color: white;
 	}
 
 	#logo a
@@ -454,7 +454,7 @@ html,body
 	{
 		overflow: hidden;
 		width: 1000px;
-		padding: 6em 100px 0em 0px;
+		padding: 6em 100px 0em 100px;
 		text-align: center;
 	}
 
@@ -466,7 +466,22 @@ html,body
 	#welcome .title h2
 	{
 	}
-
+  .welcome-2{
+		overflow: hidden;
+		width: 100px;
+		padding: 6em 100px 0em 100px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.welcome-3{
+		overflow: hidden;
+		width: 100px;
+		padding: 6em 100px 0em 100px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	#welcome a,
 	#welcome strong
 	{
@@ -723,20 +738,35 @@ html,body
 	}
   table {
     border-collapse: collapse;
-		table-layout: fixed;
-		margin-left: auto;
     width: 100%
   }
   th,td{
     text-align: center;
-    padding: 8px;
-
   }
+	td {padding-left: 10}
+	td .seting-text{
+		text-align: center;
+	}
   tr:nth-child(even){background-color: #f2f2f2}
   th{
+		text-align: center;
     background-color: #2056ac;
+		font-size: 12px;
     color: white;
   }
+	.select{
+
+	}
+	.show-back{
+	   margin-left: auto;
+		 margin-right: auto;
+	}
+	.seting{
+		color: black;
+		width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
   .dropdown{
     position: relative;
     margin-right: auto;
@@ -774,4 +804,18 @@ html,body
   .dropdown:hover .dropbtn {
     background-color:white;
 		color: #2056ac;
+	}
+	.another-button{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 0.8em 2em;
+		background: #2056ac;
+		line-height: 1.8em;
+		letter-spacing: 1px;
+		text-decoration: none;
+		font-size: 1em;
+		color: #FFF;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 	}

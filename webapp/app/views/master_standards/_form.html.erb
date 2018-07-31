@@ -12,18 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :index %>
-    <%= form.number_field :index, id: :master_standard_index %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :master_standard_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :value %>
-    <%= form.number_field :value, id: :master_standard_value %>
+    <table class ="seting">
+      <tr>
+        <td><%= form.label :index %></td>
+        <td><%= form.number_field :index, id: :master_standard_index %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :name %></td>
+        <td><%= form.text_field :name, id: :master_standard_name %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :value %></td>
+        <td><%= form.number_field :value, id: :master_standard_value %></td>
+      </tr>
+    </table>
   </div>
 
   <div class="actions">

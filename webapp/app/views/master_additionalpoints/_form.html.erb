@@ -12,18 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :index %>
-    <%= form.number_field :index, id: :master_additionalpoint_index %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :master_additionalpoint_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :allowance %>
-    <%= form.number_field :allowance, id: :master_additionalpoint_allowance %>
+    <table class ="seting">
+      <tr>
+        <td><%= form.label :index %></td>
+        <td><%= form.number_field :index, id: :master_additionalpoint_index %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :name %></td>
+        <td><%= form.text_field :name, id: :master_additionalpoint_name %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :allowance %></td>
+        <td><%= form.number_field :allowance, id: :master_additionalpoint_allowance %></td>
+      </tr>
+    </table>
   </div>
 
   <div class="actions">

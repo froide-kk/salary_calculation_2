@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730085925) do
+ActiveRecord::Schema.define(version: 20180731005744) do
+
+  create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "this_year"
+    t.integer "last_year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "master_additionalpoints", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
@@ -125,16 +132,20 @@ ActiveRecord::Schema.define(version: 20180730085925) do
 
   create_table "user_points", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "index"
-    t.integer "user_info_id"
-    t.integer "master_additionalpoint_id"
+    t.bigint "user_info_id", null: false
+    t.bigint "master_additionalpoint_id", null: false
     t.integer "value"
     t.string "reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["master_additionalpoint_id"], name: "masterA_id_fk"
+    t.index ["user_info_id"], name: "userI_id_fk"
   end
 
   add_foreign_key "save_infos", "user_infos", name: "userinfo_id_fk"
   add_foreign_key "test4s", "test2s", name: "id_test2_fk"
   add_foreign_key "user_infos", "master_jobs", name: "masterJ_id_fk"
   add_foreign_key "user_infos", "master_positions", name: "masterP_id_fk"
+  add_foreign_key "user_points", "master_additionalpoints", name: "masterA_id_fk"
+  add_foreign_key "user_points", "user_infos", name: "userI_id_fk"
 end

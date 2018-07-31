@@ -12,30 +12,39 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :index %>
-    <%= form.number_field :index, id: :user_point_index %>
-  </div>
+    <table class ="seting">
+      <tr>
+        <td><%= form.label :index %></td>
+        <td></td>
+        <td><%= form.number_field :index, id: :user_point_index %></td>
+      </tr>
+      <tr>
+       <td><%= form.label :user_info_id %></td>
+       <% user_array = UserInfo.all.map{
+            |user_info| [user_info.name,user_info.id] } %>
+        <td><%= select_tag(:user_info_id,options_for_select(user_array))%></td>
+       <td><%= form.number_field :user_info_id, id: :user_point_user_info_id %></td>
+     </tr>
 
-  <div class="field">
-    <%= form.label :user_info_id %>
-    <%= form.number_field :user_info_id, id: :user_point_user_info_id %>
-  </div>
+     <tr>
+       <td><%= form.label :master_additionalpoint_id %></td>
+       <td></td>
+       <td><%= form.number_field :master_additionalpoint_id, id: :user_point_master_additionalpoint_id %></td>
+     </tr>
 
-  <div class="field">
-    <%= form.label :master_additionalpoint_id %>
-    <%= form.number_field :master_additionalpoint_id, id: :user_point_master_additionalpoint_id %>
-  </div>
+     <tr>
+       <td><%= form.label :value %></td>
+       <td></td>
+       <td><%= form.number_field :value, id: :user_point_value %></td>
+     </tr>
 
-  <div class="field">
-    <%= form.label :value %>
-    <%= form.number_field :value, id: :user_point_value %>
+     <tr>
+       <td><%= form.label :reason %></td>
+       <td></td>
+       <td><%= form.text_field :reason, id: :user_point_reason %></td>
+     </tr>
+   </table>
   </div>
-
-  <div class="field">
-    <%= form.label :reason %>
-    <%= form.text_field :reason, id: :user_point_reason %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>

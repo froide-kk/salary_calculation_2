@@ -12,20 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :index %>
-    <%= form.number_field :index, id: :master_family_allowance_index %>
-  </div>
+    <table class ="seting">
+      <tr>
+        <td><%= form.label :index %></td>
+        <td><%= form.number_field :index, id: :master_family_allowance_index %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :name %></td>
+        <td><%= form.text_field :name, id: :master_family_allowance_name %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :allowance %></td>
+        <td><%= form.number_field :allowance, id: :master_family_allowance_allowance %></td>
+      </tr>
+    </table>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :master_family_allowance_name %>
   </div>
-
-  <div class="field">
-    <%= form.label :allowance %>
-    <%= form.number_field :allowance, id: :master_family_allowance_allowance %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>

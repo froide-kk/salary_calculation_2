@@ -33,7 +33,7 @@ Released   : 20140322
 		<div id="menu">
 			<ul>
 				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
+				<li><%= link_to 'Position', user_points_path %></li>
 				<li><a href="#" accesskey="3" title="">About Us</a></li>
 				<li><a href="#" accesskey="4" title="">Careers</a></li>
 			</ul>
@@ -68,9 +68,7 @@ Released   : 20140322
 		<br>
 </div>
   <%= render 'form', user_info: @user_info %>
-	<%= link_to 'Back', user_infos_path %>
-  
-
+	<%= link_to 'Back', user_infos_path, class:"button" %>
 
 <!-- Add your site or app content here -->
 

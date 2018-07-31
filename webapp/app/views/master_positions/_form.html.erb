@@ -12,34 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :master_position_name %>
-  </div>
+    <table class ="seting">
+      <tr>
+        <td><%= form.label :name %></td>
+        <td><%= form.text_field :name, id: :master_position_name %></td>
+      </tr>
 
-  <div class="field">
-    <%= form.label :index %>
-    <%= form.number_field :index, id: :master_position_index %>
-  </div>
+     <tr>
+       <td><%= form.label :index %></td>
+       <td><%= form.number_field :index, id: :master_position_index %></td>
+     </tr>
 
-  <div class="field">
-    <%= form.label :functional_allowance %>
-    <%= form.number_field :functional_allowance, id: :master_position_functional_allowance %>
-  </div>
+     <tr>
+       <td><%= form.label :functional_allowance %></td>
+       <td><%= form.number_field :functional_allowance, id: :master_position_functional_allowance %></td>
+     </tr>
 
-  <div class="field">
-    <%= form.label :duty_allowance %>
-    <%= form.number_field :duty_allowance, id: :master_position_duty_allowance %>
-  </div>
+     <tr>
+       <td><%= form.label :duty_allowance %></td>
+       <td><%= form.number_field :duty_allowance, id: :master_position_duty_allowance %></td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :deemded_overtime %>
-    <%= form.number_field :deemded_overtime, id: :master_position_deemded_overtime %>
-  </div>
+    <tr>
+      <td><%= form.label :deemded_overtime %></td>
+      <td><%= form.number_field :deemded_overtime, id: :master_position_deemded_overtime %></td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :standard_age %>
-    <%= form.number_field :standard_age, id: :master_position_standard_age %>
-  </div>
+    <tr>
+      <td><%= form.label :standard_age %></td>
+      <td><%= form.number_field :standard_age, id: :master_position_standard_age %></td>
+    </tr>
+  </table>
+</div>
 
   <div class="actions">
     <%= form.submit %>
