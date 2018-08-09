@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
 Design by TEMPLATED
 http://templated.co
@@ -12,6 +12,26 @@ Released   : 20140322
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+ <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#btnPrint").live("click", function () {
+            var divContents = $("#dvContainer").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>DIV Contents</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
+
+
+
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -24,131 +44,213 @@ Released   : 20140322
 </head>
 <body>
 <div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1>Undeviating</h1>
-		</div>
-		<div id="menu">
-			<ul>
-				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><%= link_to 'Position', user_points_path %></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
-			</ul>
-		</div>
-	</div>
+<div id="header" class="container">
+  <div id="logo">
+    <h1>Undeviating</h1>
+  </div>
+  <div id="menu">
+    <ul>
+      <li class="active"><%= link_to 'Users', user_infos_path %></li>
+      <li><%= link_to 'Point', user_points_path %></li>
+      <li><%= link_to 'Salary',save_infos_path %></li>
+      <li><a href="#" accesskey="4" title="">Careers</a></li>
+    </ul>
+  </div>
+</div>
 </div>
 
 
 
 <div class ="down-menu">
-  <div class ="dropdown">
-    <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
-    <div class ="dropdown-content">
-      <%= link_to 'Position', master_positions_path %>
-			<%= link_to 'Jobs', master_jobs_path %>
-			<%= link_to 'additionalpoints', master_additionalpoints_path %>
-			<%= link_to 'family', master_family_allowances_path %>
-			<%= link_to 'metropolition', master_metropolitions_path %>
-			<%= link_to 'standards', master_standards_path %>
-    </div>
+<div class ="dropdown">
+  <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
+  <div class ="dropdown-content">
+    <%= link_to 'Position', master_positions_path %>
+    <%= link_to 'Jobs', master_jobs_path %>
+    <%= link_to 'additionalpoints', master_additionalpoints_path %>
+    <%= link_to 'family', master_family_allowances_path %>
+    <%= link_to 'metropolition', master_metropolitions_path %>
+    <%= link_to 'standards', master_standards_path %>
   </div>
-		<%= link_to 'salary',save_infos_path, class:"button" %>
+</div>
 </div>
 <br>
+<form id="form1">
+    <div id="dvContainer">
 <div class="wrapper">
+
+
 
 <div id="welcome" class="container">
 
-<div class="title">
-	  <h2><%= @user_info.name %> Informaion</h2>
-		<br>
-		<br>
+<div class="title" style="text-align:center";>
+  <h1>個 人 情 報 </h1>
 </div>
+  <div>
+  <p style="text-align: right"><strong>年齢 : </strong> <%= @user_info.name %></p>
+  <p style="text-align: right"><strong>職位 : </strong><%= @user_info.master_position_id %> </font></p>
 <!-- Add your site or app content here -->
 </div>
-  <p id="notice"><%= notice %></p>
+<p style="text-align: center">労働条件通知書　兼　定額残業代についての明細書</p>
+<div>
+  <table style="margin-left:auto;margin-right: auto; text-align:center" width="70%" height="20%"  border="2" >
+    <tr>
+      <td width="70%" height="50px">
+        <strong>職位</strong>
+      </td>
+      <td width="30%">
+        <%= @user_info.master_position_id %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>職種</strong>
+     </td>
+        <td>
+          <%= @user_info.master_job_id %>
+        </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Index</strong>
+      </td>
+      <td>
+          <%= @user_info.index %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>氏名</strong>
+      </td>
+      <td>
+          <%= @user_info.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>生年月日</strong>
+      </td>
+      <td>
+          <%= @user_info.birth %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>年齢</strong>
+      </td>
+      <td>
+          <%= @user_info.age %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>年齢p</strong>
+      </td>
+      <td>
+          <%= @user_info.ageP %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>年齢調整</strong>
+      </td>
+      <td>
+          <%= @user_info.age_adjustment %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>判定</strong>
+      </td>
+      <td>
+          <%= @user_info.insurance %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>住居</strong>
+      </td>
+      <td>
+          <%= @user_info.address %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+         <strong>扶養家族数 (配偶者)</strong>
+      </td>
+      <td>
+          <%= @user_info.partner_num %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>扶養家族数（子：18迄</strong>
+      </td>
+      <td>
+          <%= @user_info.family_num %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>定額残業時間</strong>
+      </td>
+      <td>
+          <%= @user_info.shorter_working_hour_ch %>
+      </td>
+    </tr>
+  </table>
 
-  <p>
-   <strong>Master position:</strong>
-    <%= @user_info.master_position_id %>
-  </p>
+</div>
 
-  <p>
-   <strong>Master job:</strong>
-    <%= @user_info.master_job_id %>
-  </p>
+<br>
+<br>
+<p>１． あなたの今年度の賃金○○○円（昨年賃金：○○円）です。</p>
+<p>２． あなたの今年度の賃金総額は○○○円です。</p>
+<p>３． あなたの時間外労働時間数が○○時間を超えた月については、</p>
+<p>上記残業単価の額に当該超えた時間数を乗じて得た額を追加の残業代として払います。</p>
+<p>４．その他深夜残業、休日出勤に関しては、労働基準法にのっとり算出し、支払うものとします。</p>
+<br>
+<br>
+<br>
+<br>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<script type="text/javascript">
+var now= new Date();
+var nowYear = now.getFullYear();
+var nowMonth = now.getMonth()+1;
+var nowDate = now.getDate();
 
-  <p>
-   <strong>Index:</strong>
-    <%= @user_info.index %>
-  </p>
+document.write('<center><font size="4"><strong>年 :  </strong>'+nowYear +' '+'<strong>月 :  </strong>'+nowMonth+'   ' + '<strong>日 :  </strong>'+nowDate);
 
-  <p>
-   <strong>Name:</strong>
-    <%= @user_info.name %>
-  </p>
+</script>
 
-  <p>
-   <strong>Birth:</strong>
-    <%= @user_info.birth %>
-  </p>
 
-  <p>
-   <strong>Age:</strong>
-    <%= @user_info.age %>
-  </p>
 
-  <p>
-   <strong>Agep:</strong>
-    <%= @user_info.ageP %>
-  </p>
 
-  <p>
-   <strong>Age adjustment:</strong>
-    <%= @user_info.age_adjustment %>
-  </p>
+<br>
+<br>
+<br>
+<p style="text-align: center"><strong>労働者　　　　　　　　　　　　　　印</strong></p>
+<br>
+<br>
+<br>
 
-  <p>
-   <strong>Insurance:</strong>
-    <%= @user_info.insurance %>
-  </p>
+    <input type="button" value="Print Div Contents" id="btnPrint" />
+    </form>
 
-  <p>
-   <strong>Address:</strong>
-    <%= @user_info.address %>
-  </p>
 
-  <p>
-   <strong>Partner num:</strong>
-    <%= @user_info.partner_num %>
-  </p>
 
-  <p>
-   <strong>Family num:</strong>
-    <%= @user_info.family_num %>
-  </p>
-
-  <p>
-   <strong>Shorter working hour ch:</strong>
-    <%= @user_info.shorter_working_hour_ch %>
-  </p>
-
-  <p>
-   <strong>Secondhalf salary:</strong>
-    <%= @user_info.Secondhalf_salary %>
-  </p>
-  <div class="welcome-3">
-    <%= link_to 'Back', user_infos_path, class:"button" %>
-  </div>
+<div class="welcome-3">
+  <%= link_to 'Back', user_infos_path, class:"button2" %>
+</div>
 </div>
 </body>
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    navbarFixedTopAnimation();
-  });
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarFixedTopAnimation();
+});
 </script>
 
 

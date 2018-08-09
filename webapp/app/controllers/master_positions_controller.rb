@@ -28,7 +28,7 @@ class MasterPositionsController < ApplicationController
 
     respond_to do |format|
       if @master_position.save
-        format.html { redirect_to @master_position, notice: 'Master position was successfully created.' }
+        format.html { redirect_to @master_position, notice: '' }
         format.json { render :show, status: :created, location: @master_position }
       else
         format.html { render :new }

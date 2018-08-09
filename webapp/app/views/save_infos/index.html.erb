@@ -30,10 +30,10 @@ Released   : 20140322
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><%= link_to 'Position', user_points_path %></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
+				<li class="active"><%= link_to 'Users',user_infos_path %></li>
+				<li><%= link_to 'Point', user_points_path %></li>
+				<li><%= link_to 'Salary',save_infos_path %></li>
+				<li><%= link_to 'Chart',chart_sample_index_path%></li>
 			</ul>
 		</div>
 	</div>
@@ -45,48 +45,48 @@ Released   : 20140322
   <div class ="dropdown">
     <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
     <div class ="dropdown-content">
-      <%= link_to 'Position', master_positions_path %>
-			<%= link_to 'Jobs', master_jobs_path %>
-			<%= link_to 'additionalpoints', master_additionalpoints_path %>
-			<%= link_to 'family', master_family_allowances_path %>
-			<%= link_to 'metropolition', master_metropolitions_path %>
-			<%= link_to 'standards', master_standards_path %>
+      <%= link_to '職位', master_positions_path %>
+			<%= link_to '職種', master_jobs_path %>
+			<%= link_to '加点', master_additionalpoints_path %>
+			<%= link_to '家族手当', master_family_allowances_path %>
+			<%= link_to '都市手当', master_metropolitions_path %>
+			<%= link_to '基準', master_standards_path %>
     </div>
   </div>
-		<%= link_to 'UserInfo',user_infos_path, class:"button" %>
 </div>
 <br>
 <div class="wrapper">
 
-<div id="welcome" class="container">
+<div id="welcome" class="container" style="width:98%;padding-left:1%;padding-right:1%">
 
 <div class="title">
-	  <h2>Employee Salary</h2>
+	  <h2>賃金情報</h2>
 		<br>
 		<br>
 </div>
 <table style="float:left">
 <thead>
 <tr>
-<th>User info</th>
-<th>Index</th>
-<th>Year</th>
-<th>Month</th>
-<th>Basic age</th>
-<th>Functional level</th>
-<th>Normal working hour allowance</th>
-<th>Metropolitan allowance</th>
-<th>Basic pay</th>
-<th>Hourly wage</th>
-<th>Extra work hourly wage</th>
-<th>Extra work time</th>
-<th>Overtime pay</th>
-<th>Family allowance</th>
-<th>Face wage</th>
-<th>Difference</th>
-<th>Promotion rate</th>
-<th>Hourly difference</th>
-<th>Ratio</th>
+<th  style="padding-top:5px; padding-left:5px"> Index</th>
+<th style="padding-top:5px; padding-left:5px">氏名</th><!--usre_info_id/name-->
+<th style="padding-top:5px; padding-left:5px">年</th><!--year-->
+<th style="padding-top:5px; padding-left:5px">月</th><!--Month-->
+<th style="padding-top:5px; padding-left:5px">基準給与</th><!--Basic age-->
+<th style="padding-top:5px; padding-left:5px">職能給(基準)</th><!--Functional level-->
+<th style="padding-top:5px; padding-left:5px">精勤手当</th><!--Normal working hour allowance-->
+<th style="padding-top:5px; padding-left:5px">首都圏手当</th><!--Metropolitan allowance-->
+<th style="padding-top:5px; padding-left:5px">基本給</th><!--Basic pay-->
+<th style="padding-top:5px; padding-left:5px">時間単価</th><!--Hourly wage-->
+<th style="padding-top:5px; padding-left:5px">残業単価</th><!--Extra work hourly wage-->
+<th style="padding-top:5px; padding-left:5px">定額残業時間</th><!--Extra work time-->
+<th style="padding-top:5px; padding-left:5px">定額残業代</th><!--Overtime pay-->
+<th style="padding-top:5px; padding-left:5px">家族手当</th><!--Family allowance-->
+<th style="padding-top:5px; padding-left:5px">額面給与</th><!--Face wage-->
+<th style="padding-top:5px; padding-left:5px">差額</th><!--Difference-->
+<th style="padding-top:5px; padding-left:5px">昇給率</th><!--Promotion rate-->
+<th style="padding-top:5px; padding-left:5px">時給差額</th><!--Hourly difference-->
+<th style="padding-top:5px; padding-left:5px">比率</th><!--Ratio-->
+<th style="padding-top:5px; padding-left:5px">2018下期給与</th><!--half_salay-->
 <th colspan="3"></th>
 </tr>
 </thead>
@@ -94,8 +94,8 @@ Released   : 20140322
 <tbody>
 <% @save_infos.each do |save_info| %>
 <tr>
-<td><%= save_info.user_info_id %></td>
 <td><%= save_info.index %></td>
+<td><%= save_info.user_info.name %></td>
 <td><%= save_info.year %></td>
 <td><%= save_info.month %></td>
 <td><%= save_info.basic_age %></td>
@@ -113,6 +113,7 @@ Released   : 20140322
 <td><%= save_info.promotion_rate %></td>
 <td><%= save_info.hourly_difference %></td>
 <td><%= save_info.ratio %></td>
+<td><%= save_info.secondhalf_salay%></td>
 <td><%= link_to 'Show', save_info %></td>
 <td><%= link_to 'Edit', edit_save_info_path(save_info) %></td>
 <td><%= link_to 'Destroy', save_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -122,7 +123,7 @@ Released   : 20140322
 </table>
 
 
-  <%= link_to 'new save info',new_save_info_path, class:"button" %>
+  <%= link_to 'new save info',new_save_info_path, class:"button2" %>
 
 
 <!-- Add your site or app content here -->

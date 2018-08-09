@@ -280,7 +280,33 @@ html,body
 		text-decoration: none;
 		color: #272925;
 	}
-
+	.button2
+	{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 0.8em 2em;
+		background: #white;
+		line-height: 1.8em;
+		letter-spacing: 1px;
+		text-decoration: none;
+		font-size: 1em;
+		color: black;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.button2:before
+	{
+		display: inline-block;
+		background: #8DCB89;
+		margin-right: 1em;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 20px;
+		text-align: center;
+		text-decoration: none;
+		color: #272925;
+	}
 	.button-small
 	{
 	}
@@ -335,6 +361,7 @@ html,body
 		margin-bottom: 0.20em;
 		padding: 0.20em 0.9em;
 		font-size: 3.5em;
+    color:white;
 	}
 
 	#logo a
@@ -737,7 +764,7 @@ html,body
 		color: #FFFFFF;
 	}
   table {
-    border-collapse: collapse;
+		border-collapse: collapse;
     width: 100%
   }
   th,td{
@@ -755,7 +782,9 @@ html,body
     color: white;
   }
 	.select{
-
+		padding-bottom: 19.5px;
+		padding-top: 19.5px;
+		width: 330px;
 	}
 	.show-back{
 	   margin-left: auto;

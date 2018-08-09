@@ -14,32 +14,33 @@
   <div class="field">
     <table class ="seting">
       <tr>
-        <td><%= form.label :name %></td>
+        <td><%= form.label :index %></td>
+        <td><%= form.number_field :index, id: :master_position_index %></td>
+      </tr>
+
+      <tr>
+        <td>名前</td>
         <td><%= form.text_field :name, id: :master_position_name %></td>
       </tr>
 
-     <tr>
-       <td><%= form.label :index %></td>
-       <td><%= form.number_field :index, id: :master_position_index %></td>
-     </tr>
 
      <tr>
-       <td><%= form.label :functional_allowance %></td>
+       <td>職能給</td>
        <td><%= form.number_field :functional_allowance, id: :master_position_functional_allowance %></td>
      </tr>
 
      <tr>
-       <td><%= form.label :duty_allowance %></td>
+       <td>役職給</td>
        <td><%= form.number_field :duty_allowance, id: :master_position_duty_allowance %></td>
     </tr>
 
     <tr>
-      <td><%= form.label :deemded_overtime %></td>
+      <td>みなし残業</td>
       <td><%= form.number_field :deemded_overtime, id: :master_position_deemded_overtime %></td>
     </tr>
 
     <tr>
-      <td><%= form.label :standard_age %></td>
+      <td>基準年齢</td>
       <td><%= form.number_field :standard_age, id: :master_position_standard_age %></td>
     </tr>
   </table>

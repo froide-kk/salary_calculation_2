@@ -19,6 +19,7 @@ class MasterJobsController < ApplicationController
 
   # GET /master_jobs/1/edit
   def edit
+
   end
 
   # POST /master_jobs

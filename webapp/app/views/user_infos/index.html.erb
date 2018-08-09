@@ -30,10 +30,10 @@ Released   : 20140322
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><%= link_to 'Position', user_points_path %></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
+				<li class="active"><%= link_to 'Users', user_infos_path %></li>
+				<li><%= link_to 'Point', user_points_path %></li>
+				<li><%= link_to 'Salary',save_infos_path %></li>
+				<li><%= link_to 'Chart',chart_sample_index_path%></li>
 			</ul>
 		</div>
 	</div>
@@ -45,15 +45,14 @@ Released   : 20140322
   <div class ="dropdown">
     <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
     <div class ="dropdown-content">
-      <%= link_to 'Position', master_positions_path %>
-			<%= link_to 'Jobs', master_jobs_path %>
-			<%= link_to 'additionalpoints', master_additionalpoints_path %>
-			<%= link_to 'family', master_family_allowances_path %>
-			<%= link_to 'metropolition', master_metropolitions_path %>
-			<%= link_to 'standards', master_standards_path %>
+			<%= link_to '職位', master_positions_path %>
+			<%= link_to '職種', master_jobs_path %>
+			<%= link_to '加点', master_additionalpoints_path %>
+			<%= link_to '家族手当', master_family_allowances_path %>
+			<%= link_to '都市手当', master_metropolitions_path %>
+			<%= link_to '基準', master_standards_path %>
     </div>
   </div>
-		<%= link_to 'salary',save_infos_path, class:"button" %>
 </div>
 <br>
 <div class="wrapper">
@@ -61,27 +60,26 @@ Released   : 20140322
 <div id="welcome" class="container">
 
 <div class="title">
-	  <h2>Employee Informations</h2>
+	  <h2>個人情報</h2>
 		<br>
 		<br>
 </div>
    <table style="margin-left: auto; margin-right: auto;">
    <thead>
      <tr>
-       <th>Index</th>
-			 <th>Position</th>
-			 <th>Job</th>
-       <th>Name</th>
-       <th>Birth</th>
-       <th>Age</th>
-       <th>Agep</th>
-       <th>Age adjustment</th>
-       <th>Insurance</th>
-       <th>Address</th>
-       <th>Partner num</th>
-       <th>Family num</th>
-       <th>Shorter working hour ch</th>
-       <th>Secondhalf salary</th>
+       <th style="padding-top:5px; padding-left:5px">Index</th>
+			 <th style="padding-top:5px; padding-left:5px">職位</th><!--position-->
+			 <th style="padding-top:5px; padding-left:5px">職種</th><!--job-->
+       <th style="padding-top:5px; padding-left:5px">氏名</th><!--name-->
+       <th style="padding-top:5px; padding-left:5px">生年月日</th><!--birth-->
+       <th style="padding-top:5px; padding-left:5px">年齢</th><!--Age-->
+       <th style="padding-top:5px; padding-left:5px">年齢-P</th><!--Agep-->
+       <th style="padding-top:5px; padding-left:5px">年齢調整</th><!--Age adjustment-->
+       <th style="padding-top:5px; padding-left:5px">判定</th><!--insurance-->
+       <th style="padding-top:5px; padding-left:5px">住居</th><!--address-->
+       <th style="padding-top:5px; padding-left:5px">扶養家族数 (配偶者)</th><!--partner-->
+       <th style="padding-top:5px; padding-left:5px">扶養家族数（子：18迄)</th><!--family-->
+       <th style="padding-top:5px; padding-left:5px">時短勤務</th><!--shorterworking-->
        <th colspan="3"></th>
      </tr>
    </thead>
@@ -101,8 +99,7 @@ Released   : 20140322
        <td><%= user_info.partner_num %></td>
        <td><%= user_info.family_num %></td>
        <td><%= user_info.shorter_working_hour_ch %></td>
-       <td><%= user_info.Secondhalf_salary %></td>
-       <td><%= link_to 'Show', user_info %></td>
+       <td><%= link_to 'Show', user_info%></td>
        <td><%= link_to 'Edit', edit_user_info_path(user_info) %></td>
        <td><%= link_to 'Destroy', user_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
      </tr>
@@ -110,7 +107,7 @@ Released   : 20140322
   </tbody>
   </table>
 
-  <%= link_to 'new user info',new_user_info_path, class:"button" %>
+  <%= link_to 'new user info',new_user_info_path, class:"button2" %>
 
 
 <!-- Add your site or app content here -->

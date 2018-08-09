@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  resources :companies
   resources :user_points
-  resources :master_additionalpoints
+  resources :user_infos
+  get 'chart_sample/index'
+
   resources :save_infos
+  resources :companies
+  resources :master_additionalpoints
   resources :master_jobs
   resources :master_positions
-  resources :user_infos
   resources :test4s
   resources :test2s
   resources :master_standards

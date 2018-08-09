@@ -6,7 +6,12 @@ body {
   font-size: 13px;
   line-height: 18px;
 }
+select{
+  background-color: yellow;
+  padding-top: 0px;
+  padding-bottom: 0px;
 
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -55,6 +60,7 @@ div {
   background-color: red;
   display: table;
 }
+
 
 #error_explanation {
   width: 450px;

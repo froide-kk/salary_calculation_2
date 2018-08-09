@@ -20,6 +20,7 @@ one:
   promotion_rate: 1
   hourly_difference: 1
   ratio: 1
+  secondhalf_salay: 1
 
 two:
   user_info_id: 1
@@ -41,3 +42,4 @@ two:
   promotion_rate: 1
   hourly_difference: 1
   ratio: 1
+  secondhalf_salay: 1

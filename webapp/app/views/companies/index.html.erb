@@ -12,22 +12,15 @@
   </thead>
 
   <tbody>
-    <% @test%>
+    <script>
+    draw_graph();
+    </script>
+    <% @test = 0 %>
     <% @test2 %>
     <% @user_infos.each do |user_info| %>
-      <%= @test += user_info.Secondhalf_salary %>
+      
     <% end %>
-    <% @companies.each do |company| %>
-      <tr>
-        <td><%= company.this_year %></td>
-        <td><%= company.last_year %></td>
 
-
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
     <%= @test%>
   </tbody>
 </table>

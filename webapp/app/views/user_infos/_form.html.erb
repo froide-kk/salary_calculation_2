@@ -1,4 +1,3 @@
-
 <%= form_with(model: user_info, local: true) do |form| %>
   <% if user_info.errors.any? %>
     <div id="error_explanation">
@@ -13,97 +12,51 @@
   <% end %>
 
   <div class="field">
-     <table class ="seting">
-       <tr>
-         <td><%= form.label :master_position_id, class:"seting-text" %></td>
-         <% position_array = MasterPosition.all.map{
-              |master_position| [master_position.name,master_position.id] } %>
+    <table class ="seting">
 
-         <td><%= select_tag(:master_position_id,options_for_select(position_array))%></td>
-         <td><%= form.number_field :master_position_id, id: :user_info_master_position_id%></td>
+      <tr height="10%">
+        <td height="20%" width ="70%">職位</td>
+        <td height="80%" width = "30%"><%= form.select :master_position_id,options_from_collection_for_select(MasterPosition.all, :id,:name)%></td>
         <!--<td><%= form.number_field :master_position_id, id: :user_info_master_position_id %></td>-->
-       </tr>
-       <tr>
-         <td><%= form.label :master_job_id, class:"seting-text" %></td>
-         <% job_array = MasterJob.all.map{
-              |master_job| [master_job.name,master_job.id] } %>
-
-          <td><%= select_tag(:master_job_id,options_for_select(job_array))%></td>
-          <td><%= form.number_field :master_job_id, id: :user_info_master_job_id  %></td>
       </tr>
       <tr>
-          <td class="seting-text"><%= form.label :index ,class:"seting-text"%></td>
-          <td></td>
-          <td><%= form.number_field :index, id: :user_info_index  %></td>
-      </tr>
-
-      <tr>
-        <td class="seting-text"><%= form.label :name, class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.text_field :name, id: :user_info_name %></td>
-      </tr>
-
-      <tr>
-        <td class="seting-text"> <%= form.label :birth ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :birth, id: :user_info_birth %></td>
-      </tr>
-
-      <tr>
-        <td class="seting-text"><%= form.label :age ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :age, id: :user_info_age %></td>
-      </tr>
-
-      <tr>
-        <td class="seting-text"><%= form.label :ageP ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :ageP, id: :user_info_ageP %></td>
-      </tr>
-
-      <tr>
-        <td class="seting-text"><%= form.label :age_adjustment ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :age_adjustment, id: :user_info_age_adjustment %></td>
-      </tr>
-
-      <tr>
-        <td class="seting-text"><%= form.label :insurance ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :insurance, id: :user_info_insurance %></td>
-      </tr>
-
-      <tr>
-        <td class="seting-text"><%= form.label :address ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.text_field :address, id: :user_info_address %></td>
+        <td>職種</td>
+        <td><%= form.select :master_job_id, options_from_collection_for_select(MasterJob.all,:id,:name)%></td>
       </tr>
       <tr>
-        <td class="seting-text"><%= form.label :partner_num ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :partner_num, id: :user_info_partner_num %></td>
+        <td>氏名</td>
+        <td><%= form.text_field :name, id: :user_info_name ,:class=>"select"%></td>
       </tr>
       <tr>
-        <td class="seting-text"><%= form.label :family_num ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :family_num, id: :user_info_family_num %></td>
+        <td>生年月日</td>
+        <td><%= form.number_field :birth, id: :user_info_birth ,:class=>"select"%></td>
       </tr>
       <tr>
-        <td class="seting-text"><%= form.label :shorter_working_hour_ch ,class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :shorter_working_hour_ch, id: :user_info_shorter_working_hour_ch %></td>
+        <td>年齢</td>
+        <td><%= form.number_field :age, id: :user_info_age ,:class=>"select"%></td>
       </tr>
       <tr>
-        <td class="seting-text"><%= form.label :Secondhalf_salary, class:"seting-text"%></td>
-        <td></td>
-        <td><%= form.number_field :Secondhalf_salary, id: :user_info_Secondhalf_salary %></td>
+        <td>判定</td>
+        <td><%= form.number_field :insurance, id: :user_info_insurance ,:class=>"select"%></td>
       </tr>
-
-
-     </table>
+      <tr>
+        <td>住居</td>
+        <td><%= form.text_field :address, id: :user_info_address,:class=>"select" %></td>
+      </tr>
+      <tr>
+        <td>扶養家族数 (配偶者)</td>
+        <td><%= form.number_field :partner_num, id: :user_info_partner_num ,:class=>"select"%></td>
+      </tr>
+      <tr>
+        <td>扶養家族数（子：18迄)</td>
+        <td><%= form.number_field :family_num, id: :user_info_family_num ,:class=>"select"%></td>
+      </tr>
+      <tr>
+        <td>時短勤務</td>
+        <td><%= form.number_field :shorter_working_hour_ch, id: :user_info_shorter_working_hour_ch ,:class=>"select"%></td>
+      </tr>
+    </table>
   </div>
-  <br/>
-<!--form.collection_select( :master_position_id, id: :user_info_master_position_id)-->
 
   <div class="actions">
     <%= form.submit %>

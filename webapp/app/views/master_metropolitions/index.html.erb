@@ -30,10 +30,10 @@ Released   : 20140322
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><%= link_to 'Position', user_points_path %></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
+				<li class="active"><%= link_to 'Users',user_infos_path %></li>
+				<li><%= link_to 'Point', user_points_path %></li>
+				<li><%= link_to 'Salary',save_infos_path %></li>
+				<li><%= link_to 'Chart',chart_sample_index_path%></li>
 			</ul>
 		</div>
 	</div>
@@ -45,15 +45,14 @@ Released   : 20140322
   <div class ="dropdown">
     <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
     <div class ="dropdown-content">
-      <%= link_to 'Position', master_positions_path %>
-			<%= link_to 'Jobs', master_jobs_path %>
-			<%= link_to 'additionalpoints', master_additionalpoints_path %>
-			<%= link_to 'family', master_family_allowances_path %>
-			<%= link_to 'metropolition', master_metropolitions_path %>
-			<%= link_to 'standards', master_standards_path %>
+			<%= link_to '職位', master_positions_path %>
+			<%= link_to '職種', master_jobs_path %>
+			<%= link_to '加点', master_additionalpoints_path %>
+			<%= link_to '家族手当', master_family_allowances_path %>
+			<%= link_to '都市手当', master_metropolitions_path %>
+			<%= link_to '基準', master_standards_path %>
     </div>
   </div>
-		<%= link_to 'UserInfo',user_infos_path, class:"button" %>
 </div>
 <br>
 <div class="wrapper">
@@ -61,7 +60,7 @@ Released   : 20140322
 <div id="welcome" class="container">
 
 <div class="title">
-	  <h2>Master Metropolitions</h2>
+	  <h2>都市手当</h2>
 		<br>
 		<br>
 </div>
@@ -72,8 +71,8 @@ Released   : 20140322
   <thead>
     <tr>
       <th>Index</th>
-      <th>Name</th>
-      <th>Allowance</th>
+      <th>名前</th>
+      <th>手当</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -94,7 +93,7 @@ Released   : 20140322
 
 <br>
 
-<%= link_to 'New Master Metropolition', new_master_metropolition_path %>
+<%= link_to 'New Master Metropolition', new_master_metropolition_path , class:"button2"%>
 
 
 

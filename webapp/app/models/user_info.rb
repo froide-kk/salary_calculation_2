@@ -1,6 +1,5 @@
 class UserInfo < ApplicationRecord
-
-  belongs_to :master_position
+  has_one :save_infos
   belongs_to :master_job
-  has_one :user_points
+  belongs_to :master_position
 end

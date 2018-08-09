@@ -14,7 +14,6 @@ one:
   partner_num: 1
   family_num: 1
   shorter_working_hour_ch: 1
-  Secondhalf_salary: 1
 
 two:
   master_position_id: 1
@@ -30,4 +29,3 @@ two:
   partner_num: 1
   family_num: 1
   shorter_working_hour_ch: 1
-  Secondhalf_salary: 1

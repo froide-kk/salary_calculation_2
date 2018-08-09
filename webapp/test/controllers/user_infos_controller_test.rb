@@ -17,7 +17,7 @@ class UserInfosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user_info" do
     assert_difference('UserInfo.count') do
-      post user_infos_url, params: { user_info: { Secondhalf_salary: @user_info.Secondhalf_salary, address: @user_info.address, age: @user_info.age, ageP: @user_info.ageP, age_adjustment: @user_info.age_adjustment, birth: @user_info.birth, family_num: @user_info.family_num, index: @user_info.index, insurance: @user_info.insurance, master_job_id: @user_info.master_job_id, master_position_id: @user_info.master_position_id, name: @user_info.name, partner_num: @user_info.partner_num, shorter_working_hour_ch: @user_info.shorter_working_hour_ch } }
+      post user_infos_url, params: { user_info: { address: @user_info.address, age: @user_info.age, ageP: @user_info.ageP, age_adjustment: @user_info.age_adjustment, birth: @user_info.birth, family_num: @user_info.family_num, index: @user_info.index, insurance: @user_info.insurance, master_job_id: @user_info.master_job_id, master_position_id: @user_info.master_position_id, name: @user_info.name, partner_num: @user_info.partner_num, shorter_working_hour_ch: @user_info.shorter_working_hour_ch } }
     end
 
     assert_redirected_to user_info_url(UserInfo.last)
@@ -34,7 +34,7 @@ class UserInfosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user_info" do
-    patch user_info_url(@user_info), params: { user_info: { Secondhalf_salary: @user_info.Secondhalf_salary, address: @user_info.address, age: @user_info.age, ageP: @user_info.ageP, age_adjustment: @user_info.age_adjustment, birth: @user_info.birth, family_num: @user_info.family_num, index: @user_info.index, insurance: @user_info.insurance, master_job_id: @user_info.master_job_id, master_position_id: @user_info.master_position_id, name: @user_info.name, partner_num: @user_info.partner_num, shorter_working_hour_ch: @user_info.shorter_working_hour_ch } }
+    patch user_info_url(@user_info), params: { user_info: { address: @user_info.address, age: @user_info.age, ageP: @user_info.ageP, age_adjustment: @user_info.age_adjustment, birth: @user_info.birth, family_num: @user_info.family_num, index: @user_info.index, insurance: @user_info.insurance, master_job_id: @user_info.master_job_id, master_position_id: @user_info.master_position_id, name: @user_info.name, partner_num: @user_info.partner_num, shorter_working_hour_ch: @user_info.shorter_working_hour_ch } }
     assert_redirected_to user_info_url(@user_info)
   end
 

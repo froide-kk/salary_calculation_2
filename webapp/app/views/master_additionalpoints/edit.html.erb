@@ -30,10 +30,10 @@ Released   : 20140322
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><%= link_to 'Position', user_points_path %></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
+				<li class="active"><%= link_to 'Users',user_infos_path %></li>
+				<li><%= link_to 'Point', user_points_path %></li>
+				<li><%= link_to 'Salary',save_infos_path %></li>
+				<li><%= link_to 'Chart',chart_sample_index_path%></li>
 			</ul>
 		</div>
 	</div>
@@ -45,15 +45,14 @@ Released   : 20140322
   <div class ="dropdown">
     <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
     <div class ="dropdown-content">
-      <%= link_to 'Position', master_positions_path %>
-			<%= link_to 'Jobs', master_jobs_path %>
-			<%= link_to 'additionalpoints', master_additionalpoints_path %>
-			<%= link_to 'family', master_family_allowances_path %>
-			<%= link_to 'metropolition', master_metropolitions_path %>
-			<%= link_to 'standards', master_standards_path %>
+			<%= link_to '職位', master_positions_path %>
+			<%= link_to '職種', master_jobs_path %>
+			<%= link_to '加点', master_additionalpoints_path %>
+			<%= link_to '家族手当', master_family_allowances_path %>
+			<%= link_to '都市手当', master_metropolitions_path %>
+			<%= link_to '基準', master_standards_path %>
     </div>
   </div>
-		<%= link_to 'salary',save_infos_path, class:"button" %>
 </div>
 <br>
 <div class="wrapper">
@@ -61,15 +60,14 @@ Released   : 20140322
 <div id="welcome" class="container">
 
 <div class="title">
-	  <h2>Editing Master Additionalpoint</h2>
+	  <h2>Editing</h2>
 		<br>
 		<br>
 </div>
 <!-- Add your site or app content here -->
 <div class "welcome-2">
   <%= render 'form', master_additionalpoint: @master_additionalpoint %>
-  <%= link_to 'OK', master_additionalpoints_path  ,class:"button"%>
-  <%= link_to 'Back', master_additionalpoints_path   ,class:"button"%>
+  <%= link_to 'Back', master_additionalpoints_path   ,class:"button2"%>
 </div>
 </div>
 </div>

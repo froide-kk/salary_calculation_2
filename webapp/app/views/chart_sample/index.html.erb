@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Undeviating
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20140322
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1>Undeviating</h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="active"><%= link_to 'Users', user_infos_path %></li>
+				<li><%= link_to 'Point', user_points_path %></li>
+				<li><%= link_to 'Salary',save_infos_path %></li>
+				<li><%= link_to 'Chart',chart_sample_index_path%></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+<div class ="down-menu">
+  <div class ="dropdown">
+    <div class="dropbtn" style="margin-left: auto; margin-right: auto;">MasterData</div>
+    <div class ="dropdown-content">
+			<%= link_to '職位', master_positions_path %>
+			<%= link_to '職種', master_jobs_path %>
+			<%= link_to '加点', master_additionalpoints_path %>
+			<%= link_to '家族手当', master_family_allowances_path %>
+			<%= link_to '都市手当', master_metropolitions_path %>
+			<%= link_to '基準', master_standards_path %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="wrapper">
+
+<div id="welcome" class="container">
+
+<div class="title">
+	  <h2>チャート</h2>
+		<br>
+		<br>
+</div>
+
+<table style="margin-left: auto; margin-right: auto;">
+ <tbody>
+<script src="./js/chart/Chart.js"></script>
+<canvas id="myChart" width="200" height="80"></canvas>
+<% @save_infos = SaveInfo.all %>
+<% @user_names = Array.new %>
+<% @user_addit = Array.new %>
+<% @count = 0%>
+<% @save_infos.each do |save_info| %>
+	<% @user_names.push(save_info.user_info.name) %>
+	<% @user_addit.push(save_info.basic_pay) %>
+	<% @count += 1 %>
+<% end %>
+
+<%
+	for i in 0..@count
+		for j in 0..@count-i
+				if @user_addit.at(j).to_i  < @user_addit.at(j+1).to_i
+					@tmp = @user_addit.at(j)
+					@user_addit[j] = @user_addit.at(j+1)
+					@user_addit[j+1] = @tmp
+					@tmp = @user_names.at(j)
+					@user_names[j] = @user_names.at(j+1)
+					@user_names[j+1] = @tmp
+				end
+		end
+	end
+
+%>
+
+
+<script type="text/javascript">
+
+
+var n_string = new Array();
+/*for(var i=0;i<string.length;i++){
+	if(string[i] == ';')
+	{
+		n_string[0] = "";
+		for(var j=i+1;;j++){
+			if(string[j] == '&') break;
+			n_string[0] += string[j];
+		}
+	}
+}
+*/
+var value;
+var ctx = document.getElementById("myChart");
+var user_name = new Array();
+var user_addit = new Array();
+
+user_addit[0] = "<%= @user_addit[0]%>";
+user_addit[1] = "<%= @user_addit[1]%>";
+user_addit[2] = "<%= @user_addit[2]%>";
+user_addit[3] = "<%= @user_addit[3]%>";
+user_addit[4] = "<%= @user_addit[4]%>";
+
+user_name[0] = "<%= @user_names[0]%>";
+user_name[1] = "<%= @user_names[1]%>";
+user_name[2] = "<%= @user_names[2]%>";
+user_name[3] = "<%= @user_names[3]%>";
+user_name[4] = "<%= @user_names[4]%>";
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: user_name ,
+        datasets: [{
+            label: '# of Votes',
+            data: user_addit,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }],
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+
+ </tbody>
+</table>
+
+
+<!-- Add your site or app content here -->
+
+</div>
+</div>
+</body>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navbarFixedTopAnimation();
+  });
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -12,119 +12,24 @@
   <% end %>
 
   <div class="field">
-    <table class ="seting">
-      <tr>
-        <td><%= form.label :user_info_id %><td>
-          <% user_array = UserInfo.all.map{
-               |user_info| [user_info.name,user_info.id] } %>
-        <td><%= select_tag(:user_info_id,options_for_select(user_array))%></td>
-        <td><%= form.number_field :user_info_id, id: :save_info_user_info_id %><td>
-      </tr>
+    <table class="ttt">
       <tr>
         <td><%= form.label :index %></td>
-        <td></td>
-        <td><%= form.number_field :index, id: :save_info_index %></td>
+        <td style="width:30%;"><%= form.number_field :index, id: :save_info_index,:class=>"select"%></td>
+      </tr>
+      <tr>
+        <td>氏名</td>
+        <td><%= form.select :user_info_id,options_from_collection_for_select(UserInfo.all, :id,:name)%></td>
+      </tr>
+      <tr>
+       <td>年</td>
+       <td><%= form.number_field :year, id: :save_info_year,:class=>"select" %></td>
       </tr>
 
       <tr>
-       <td><%= form.label :year %></td>
-       <td></td>
-       <td><%= form.number_field :year, id: :save_info_year %></td>
-      </tr>
-
-      <tr>
-       <td><%= form.label :month %></td>
-       <td></td>
-       <td><%= form.number_field :month, id: :save_info_month %></td>
+       <td>月</td>
+       <td><%= form.number_field :month, id: :save_info_month ,:class=>"select"%></td>
      </tr>
-
-  <tr>
-    <td><%= form.label :basic_age %></td>
-    <td></td>
-    <td><%= form.number_field :basic_age, id: :save_info_basic_age %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :functional_level %></td>
-    <td></td>
-    <td><%= form.number_field :functional_level, id: :save_info_functional_level %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :normal_working_hour_allowance %></td>
-    <td></td>
-    <td><%= form.number_field :normal_working_hour_allowance, id: :save_info_normal_working_hour_allowance %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :metropolitan_allowance %></td>
-    <td></td>
-    <td><%= form.number_field :metropolitan_allowance, id: :save_info_metropolitan_allowance %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :basic_pay %></td>
-    <td></td>
-    <td><%= form.number_field :basic_pay, id: :save_info_basic_pay %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :hourly_wage %></td>
-    <td></td>
-    <td><%= form.number_field :hourly_wage, id: :save_info_hourly_wage %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :extra_work_hourly_wage %></td>
-    <td></td>
-    <td><%= form.number_field :extra_work_hourly_wage, id: :save_info_extra_work_hourly_wage %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :extra_work_time %></td>
-    <td></td>
-    <td><%= form.number_field :extra_work_time, id: :save_info_extra_work_time %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :overtime_pay %></td>
-    <td></td>
-    <td><%= form.number_field :overtime_pay, id: :save_info_overtime_pay %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :family_allowance %></td>
-    <td></td>
-    <td><%= form.number_field :family_allowance, id: :save_info_family_allowance %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :face_wage %></td>
-    <td></td>
-    <td><%= form.number_field :face_wage, id: :save_info_face_wage %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :difference %></td>
-    <td></td>
-    <td><%= form.number_field :difference, id: :save_info_difference %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :promotion_rate %></td>
-    <td></td>
-    <td><%= form.number_field :promotion_rate, id: :save_info_promotion_rate %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :hourly_difference %></td>
-    <td></td>
-    <td><%= form.number_field :hourly_difference, id: :save_info_hourly_difference %></td>
-  <tr>
-    <td><%= form.label :ratio %></td>
-    <td></td>
-    <td><%= form.number_field :ratio, id: :save_info_ratio %></td>
-  </tr>
 </table>
 </div>
   <div class="actions">
